@@ -1,0 +1,39 @@
+
+main#site-main
+  .container
+    .box-nav.d-flex.justify-between
+      .filter
+        a(href='/')
+          i.fas.fa-angle-double-left
+          | All Users
+    .form-title.text-center
+      h2.text-dark Update User
+      span.text-light Update account with the form below
+    //- form handling
+    form#update_user(method='post')
+      .new_user
+        .form-group
+          label.text-light(for='name') Name
+          input(type='hidden' name='id' value='')
+          input(type='text' name='name' value='' placeholder='Hoe Hoe Hoe')
+        .form-group
+          label.text-light(for='email') Email
+          input(type='text' name='email' value='' placeholder='example@gmail.com')
+        .form-group
+          label.text-light(for='gender') Gender
+          .radio.inline
+            input#radio-0(type='radio' name='gender' value='Male')
+            label.radio-label(for='radio-0') Male
+          .radio.inline
+            input#radio-1(type='radio' name='gender' value='Female')
+            label.radio-label(for='radio-1') Female
+        .form-group
+          label.text-light(for='gender') Status
+          .radio.inline
+            input#radio-2(type='radio' name='status' value='Active')
+            label.radio-label(for='radio-2') Active
+          .radio.inline
+            input#radio-3(type='radio' name='status' value='Inactive')
+            label.radio-label(for='radio-3') Inactive
+        .form-group
+          button.btn.text-dark.update(type='submit') Save

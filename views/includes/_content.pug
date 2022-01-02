@@ -1,0 +1,38 @@
+header#header
+  nav
+    .container
+      .textcenter
+        a.nav-brand.text-dark(href='/') S-messenger
+main#site-main
+  .container
+    .box-nav.d-flex.justify-between
+      a.border-shadow(href='/add-user')
+        span.text-gradient
+          | New user
+          i.far.fa-user
+    form(action='/' method='post')
+      table.table
+        thead.thead-dark
+          tr
+            th ID
+            th Name
+            th @Email
+            th Gender
+            th Status
+            th Action
+        tbody
+        each u, i in users
+          tr
+            td = i + 1
+            td = u.name
+            td = u.email
+            td = u.gender
+            td = u.status
+            td
+              a.btn-border.shadow.update(href='/update-user')
+                span.text-gradient
+                  i.fas.fa-pencil-alt
+              a.btn-border.shadow.delete(href='#')
+                span.text-gradient
+                  i.fas.fa-times
+        
